@@ -1,31 +1,29 @@
-import React, { useState } from 'react';
-import Navbar from '../Navbar';
-import Sidebar from '../Sidebar';
+import React from "react";
 import {
   HeroContainer,
   HeroContent,
   HeroItems,
   HeroH1,
   HeroP,
-  HeroBtn
-} from './HeroElements';
+  HeroBtn,
+  BuyLink,
+} from "./HeroElements";
 
-const Hero = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
-  const toggle = () => {
-    setIsOpen(!isOpen);
-  };
-
+const Hero = ({ CONFIG }) => {
   return (
     <HeroContainer>
-      <Navbar toggle={toggle} />
-      <Sidebar isOpen={isOpen} toggle={toggle} />
       <HeroContent>
         <HeroItems>
-          <HeroH1>Greatest Pizza Ever</HeroH1>
-          <HeroP>Ready in 60 seconds</HeroP>
-          <HeroBtn>Place Order</HeroBtn>
+          <HeroH1>{CONFIG.HEADING_HERO}</HeroH1>
+          <HeroP>{CONFIG.SUBHEADING_HERO}</HeroP>
+          <BuyLink
+            href={CONFIG.MARKETPLACE_LINK}
+            target="_blank"
+            rel="noreferrer"
+            aria-label="Opensea"
+          >
+            <HeroBtn>{CONFIG.BUTTON_NAME_HERO}</HeroBtn>
+          </BuyLink>
         </HeroItems>
       </HeroContent>
     </HeroContainer>

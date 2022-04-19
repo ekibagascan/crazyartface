@@ -1,11 +1,5 @@
-import React from 'react';
-import {
-  FaFacebook,
-  FaInstagram,
-  FaYoutube,
-  FaTwitter,
-  FaLinkedin
-} from 'react-icons/fa';
+import React from "react";
+import { FaInstagram, FaDiscord, FaTwitter } from "react-icons/fa";
 import {
   FooterContainer,
   FooterWrap,
@@ -13,36 +7,49 @@ import {
   SocialMediaWrap,
   SocialLogo,
   SocialIcons,
-  SocialIconLink
-} from './FooterElements';
+  SocialIconLink,
+} from "./FooterElements";
 
-const Footer = () => {
+const Footer = ({ CONFIG }) => {
   return (
     <FooterContainer>
       <FooterWrap>
         <SocialMedia>
           <SocialMediaWrap>
-            <SocialLogo to='/'>Pizza</SocialLogo>
+            <SocialLogo to="/">{CONFIG.FOOTER_HEADING}</SocialLogo>
             <SocialIcons>
-              <SocialIconLink href='/' target='_blank' aria-label='Facebook'>
-                <FaFacebook />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Instagram'>
-                <FaInstagram />
-              </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Youtube'>
-                <FaYoutube />
+              <SocialIconLink
+                href={CONFIG.DISCORD_LINK}
+                target="_blank"
+                aria-label="Discord"
+              >
+                <FaDiscord />
               </SocialIconLink>
               <SocialIconLink
-                href='//www.twitter.com/briandesignz'
-                target='_blank'
-                aria-label='Twitter'
-                rel='noopener noreferrer'
+                href={CONFIG.INSTAGRAM_LINK}
+                target="_blank"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </SocialIconLink>
+              <SocialIconLink
+                href={CONFIG.TWITTER_LINK}
+                target="_blank"
+                aria-label="Twitter"
+                rel="noopener noreferrer"
               >
                 <FaTwitter />
               </SocialIconLink>
-              <SocialIconLink href='/' target='_blank' aria-label='Linkedin'>
-                <FaLinkedin />
+              <SocialIconLink
+                href={CONFIG.MARKETPLACE_LINK}
+                target="_blank"
+                aria-label="Opensea"
+              >
+                <img
+                  src="/Config/images/opensea.svg"
+                  alt="opensea"
+                  height={25}
+                />
               </SocialIconLink>
             </SocialIcons>
           </SocialMediaWrap>

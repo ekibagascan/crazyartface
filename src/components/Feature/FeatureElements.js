@@ -1,9 +1,8 @@
-import styled from 'styled-components';
-import FeaturePic from '../../images/featured3.jpg';
+import styled from "styled-components";
 
 export const FeatureContainer = styled.div`
   background: linear-gradient(to right, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.1)),
-    url(${FeaturePic});
+    url("/Config/images/featured3.png");
   height: 100vh;
   max-height: 500px;
   background-position: center;
@@ -35,7 +34,7 @@ export const FeatureButton = styled.button`
 
   &:hover {
     color: #fff;
-    background: #e31837;
+    background: #1f7ddb;
     transition: 0.2s ease-out;
     cursor: pointer;
   }
